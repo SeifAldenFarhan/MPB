@@ -5,31 +5,31 @@ GET http://127.0.0.1:8000/posts/
 
 2. APIs to allow all users to like posts.
 url = http://127.0.0.1:8000/likepost/
-body = {'post_id': '1'}
+body = {'post_id': 1}
 headers = {} // can get after user login
 response = requests.request("POST", url, headers=headers, data=body)
 
 2a. Only the user that liked the post can remove his like.
 url = http://127.0.0.1:8000/unlikepost/
-body = {'post_id': '1'}
+body = {'post_id': 1}
 headers = {} // can get after user login
 response = requests.request("POST", url, headers=headers, data=body)
 
 3. APIs to allow some users to post blog posts.
-url = http://127.0.0.1:8000/postblog/
+url = http://127.0.0.1:8000/newpost/
 body = {'post_content': 'Hi, I am a new post'}
 headers = {} // can get after user login
 response = requests.request("POST", url, headers=headers, data=body)
 
 3a1. Only the users that wrote/posted the blog post can edit
-url = http://127.0.0.1:8000/editblog/
-body = {'new_content': 'new content', 'post_id': '1'}
+url = http://127.0.0.1:8000/editpost/
+body = {'post_id': 1, 'new_content': 'new content'}
 headers = {} // can get after user login
 response = requests.request("POST", url, headers=headers, data=body)
 
 3a2. delete the post.
-url = http://127.0.0.1:8000/deleteblog/
-body = {'post_id': '1'}
+url = http://127.0.0.1:8000/deletepost/
+body = {'post_id': 1}
 headers = {} // can get after user login
 response = requests.request("POST", url, headers=headers, data=body)
 
@@ -42,5 +42,17 @@ response = requests.request("POST", url, headers=headers, data=body)
 5. Authentication should be based on Basic Auth for the registered users (Bonus for JWT)
 url = http://127.0.0.1:8000/login/
 body = {'username': 'Seif', 'password': 'seif123'}
+headers = {}
+response = requests.request("POST", url, headers=headers, data=body)
+
+5.a Logout
+url = http://127.0.0.1:8000/logout/
+body = {}
+headers = {}
+response = requests.request("POST", url, headers=headers, data=body)
+
+6. Share post, new post will create
+url = http://127.0.0.1:8000/sharepost/
+body = {'post_id': 2}
 headers = {}
 response = requests.request("POST", url, headers=headers, data=body)
