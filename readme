@@ -1,4 +1,4 @@
-Hi,
+# Hi,
 
 1- API to allow all users to see the posted blogs:
 GET http://127.0.0.1:8000/posts/
