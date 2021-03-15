@@ -16,12 +16,24 @@ $ .\myproject\Scripts\activate
 (myproject)$ pip install -r requirements.txt
 ```
 
-### Note the (env) in front of the prompt. This indicates that this terminal session operates in a virtual environment set up by virtualenv2.
 ### Once pip has finished downloading the dependencies:
+### Set Database (Make Sure you are in directory same as manage.py)
 ```sh
-(env)$ cd MPB
-(env)$ python manage.py runserver
+(myproject)$ cd MPB
+$ python manage.py makemigrations
+$ python manage.py migrate
 ```
+
+### Create SuperUser
+```sh
+$ python manage.py createsuperuser
+```
+### Run the project
+```sh
+(myproject)$ python manage.py runserver
+```
+
+#### After all these steps , you can start testing and developing this project.
 
 ## About the project
 First of all, the user needs to register to use the other functions.
@@ -30,6 +42,9 @@ After the login, the user can see all the blogs, can write a new blog(post), and
 Also, the user can like the others' posts or unlike (if he/she like the posts already).
 The user can share the other's posts.
 In the end, the user can logout.
+
+
+## The Database
 
 ## The API
 #### All the responses are JSON.
