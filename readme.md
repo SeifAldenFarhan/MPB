@@ -31,7 +31,16 @@ The user can share the other's posts.
 In the end, the user can logout.
 
 ## The API
+#### All the response are JSON.
+### The fields' name that expected to use are:
+1. post_id
+2. post_content
+3. new_content
+4. username
+5. password
+6. email
 
+### The API requests:
 - 1 API to allow all users to see the posted blogs:
 ```sh
 GET http://127.0.0.1:8000/posts/
