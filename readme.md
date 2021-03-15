@@ -23,7 +23,7 @@ $ cd MPB
 (env)$ python manage.py runserver
 ```
 
-## About the project
+### About the project
 First of all, the user needs to register to use the other functions.
 Then, the user login by his/her username and password.
 After the login, the user can see all the blogs, can write a new blog(post), and edit or delete it if and only if he/she is the author.
@@ -31,7 +31,7 @@ Also, the user can like the others' posts or unlike (if he/she like the posts al
 The user can share the other's posts.
 In the end, the user can logout.
 
-## The API
+### The API
 
 - 1 API to allow all users to see the posted blogs:
 ```sh
