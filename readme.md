@@ -31,14 +31,14 @@ The user can share the other's posts.
 In the end, the user can logout.
 
 ## The API
-#### All the response are JSON.
+#### All the responses are JSON.
 ### The fields' name that expected to use are:
-1. post_id
-2. post_content
-3. new_content
-4. username
-5. password
-6. email
+1. post_id - the post id that defined automatically in the database.
+2. post_content - the post content when new blog posted.
+3. new_content - the post content when user edit his/her exist post.
+4. username - the username of a user when register or login.
+5. password - the password of a user when register or login.
+6. email - the email of a user when register.
 
 ### The API requests:
 - 1 API to allow all users to see the posted blogs:
@@ -108,3 +108,17 @@ body = {'post_id': 2}
 headers = {}
 response = requests.request("POST", url, headers=headers, data=body)
 ```
+
+## Test the API
+#### There are two tests:
+1. Python file
+```sh
+MPB\blog\tests.py
+```
+This Python file is running many test using unittest library.
+
+2. Postman test
+```sh
+MPB\MPB.postman_tests.json
+```
+This JSON file can be imported to Postman, it contains requests for all the cases of the API.
