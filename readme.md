@@ -7,12 +7,11 @@ $ git clone https://github.com/SeifAldenFarhan/MPB.git
 $ cd MPB
 ```
 
-### Then install the dependencies:
+### Create a virtualenv and install Django and any other requirements
+In your Bash console, create a virtualenv, naming it after your project, and choosing the version of Python you want to use:
 ```sh
-(env)$ pip install -r requirements.txt
-```
-### Then install the dependencies:
-```sh
+$ mkvirtualenv --python=/usr/bin/python3.8 env
+(env)$ pip install django
 (env)$ pip install -r requirements.txt
 ```
 
