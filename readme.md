@@ -10,9 +10,10 @@ $ cd MPB
 ### Create a virtualenv and install Django and any other requirements
 In your Bash console, create a virtualenv, naming it after your project, and choosing the version of Python you want to use:
 ```sh
-$ mkvirtualenv --python=/usr/bin/python3.8 env
-(env)$ pip install django
-(env)$ pip install -r requirements.txt
+$ py -m pip install --user virtualenv
+$ py -m venv myproject
+$ .\myproject\Scripts\activate
+(myproject)$ pip install -r requirements.txt
 ```
 
 ### Note the (env) in front of the prompt. This indicates that this terminal session operates in a virtual environment set up by virtualenv2.
