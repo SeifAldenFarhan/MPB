@@ -12,7 +12,6 @@ router.register(r'posts', views.PostViewSet)
 router.register(r'users', views.UserViewSet)
 
 urlpatterns = [
-    # path('login/', views.MyObtainTokenPairView.as_view(), name='token_obtain_pair'),
     url(r'^register/$', views.register, name='register'),
     url(r'^login/$', views.user_login, name='user_login'),
     url(r'^likepost/$', views.like_post, name='like_post'),
@@ -21,7 +20,6 @@ urlpatterns = [
     url(r'^editpost/$', views.edit_post, name='edit_blog'),
     url(r'^deletepost/$', views.delete_post, name='delete_blog'),
     url(r'^sharepost/$', views.share_post, name='share_blog'),
-
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
