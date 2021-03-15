@@ -44,41 +44,45 @@ In the end, the user can logout.
 ### The API requests:
 - 1 API to allow all users to see the posted blogs:
 ```sh
-GET http://127.0.0.1:8000/posts/
+url = http://127.0.0.1:8000/posts/
+headers = {'Cookie': } // can get after user login
+response = requests.request("GET", url, headers=headers)
 ```
+
 - 2 APIs to allow all users to like posts.
 ```sh
 url = http://127.0.0.1:8000/likepost/
 body = {'post_id': 1}
-headers = {} // can get after user login
+headers = {'Cookie': } // can get after user login
 response = requests.request("POST", url, headers=headers, data=body)
 ```
+
 - 2a Only the user that liked the post can remove his like.
 ```sh
 url = http://127.0.0.1:8000/unlikepost/
 body = {'post_id': 1}
-headers = {} // can get after user login
+headers = {'Cookie': } // can get after user login
 response = requests.request("POST", url, headers=headers, data=body)
 ```
 - 3 APIs to allow some users to post blog posts.
 ```sh
 url = http://127.0.0.1:8000/newpost/
 body = {'post_content': 'Hi, I am a new post'}
-headers = {} // can get after user login
+headers = {'Cookie': } // can get after user login
 response = requests.request("POST", url, headers=headers, data=body)
 ```
 - 3a1 Only the users that wrote/posted the blog post can edit
 ```sh
 url = http://127.0.0.1:8000/editpost/
 body = {'post_id': 1, 'new_content': 'new content'}
-headers = {} // can get after user login
+headers = {'Cookie': } // can get after user login
 response = requests.request("POST", url, headers=headers, data=body)
 ```
 - 3a2 delete the post.
 ```sh
 url = http://127.0.0.1:8000/deletepost/
 body = {'post_id': 1}
-headers = {} // can get after user login
+headers = {'Cookie': } // can get after user login
 response = requests.request("POST", url, headers=headers, data=body)
 ```
 - 4 Very basic user registration
@@ -99,14 +103,14 @@ response = requests.request("POST", url, headers=headers, data=body)
 ```sh
 url = http://127.0.0.1:8000/logout/
 body = {}
-headers = {}
+headers = {'Cookie': } // can get after user login
 response = requests.request("POST", url, headers=headers, data=body)
 ```
 - 6 Share post, new post will create
 ```sh
 url = http://127.0.0.1:8000/sharepost/
 body = {'post_id': 2}
-headers = {}
+headers = {'Cookie': } // can get after user login
 response = requests.request("POST", url, headers=headers, data=body)
 ```
 
