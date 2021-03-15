@@ -33,7 +33,7 @@ $ python manage.py createsuperuser
 (myproject)$ python manage.py runserver
 ```
 
-#### After all these steps , you can start testing and developing this project.
+#### After all these steps , you can start testing this project.
 
 ## About the project
 First of all, the user needs to register to use the other functions.
@@ -45,6 +45,15 @@ In the end, the user can logout.
 
 
 ## The Database
+#### The used database is SQL (SQLite):
+- Easy to setup, light-weight, more of a single-user or low volume database.
+- All data is stored in a file which is easy to transfer from system to system.
+- No server setup needed.
+- Support ORM (Object–relational mapping).
+- Fast enough, gets the job done.
+- The default database when starting a new Django project.
+- NoSql is 3rd party, not built-in and needs to setup.
+- NoSql doesn't support ManyToManyFields and has a few other limitations.
 
 ## The API
 #### All the responses are JSON.
