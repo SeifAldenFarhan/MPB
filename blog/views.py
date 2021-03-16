@@ -1,4 +1,5 @@
 import json
+import logging
 
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -11,6 +12,8 @@ from rest_framework.permissions import IsAuthenticated
 from blog import models
 from blog.forms import UserForm, UserInfoForm
 from blog.serializers import PostSerializer, UserSerializer
+
+logger = logging.getLogger(__name__)
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -30,6 +33,7 @@ class PostViewSet(viewsets.ModelViewSet):
 def user_logout(request):
     logout(request)
     data_set = dict(detail="User Logged Out")
+    logger.info("User Logged Out")
     json_response = json.dumps(data_set)
     return HttpResponse(json_response)
 
@@ -46,18 +50,22 @@ def user_login(request):
                 user_ = models.User.objects.get(username=username)
                 data_set = dict(username=user_.username, email=user_.email)
                 json_response = json.dumps(data_set)
+                logger.info("User Login")
                 return HttpResponse(json_response)
             else:
                 data_set = dict(detail="Account Not Active.")
                 json_response = json.dumps(data_set)
+                logger.error("Account Not Active.")
                 return HttpResponseNotFound(json_response)
         else:
             data_set = dict(detail="Invalid Login Details.")
             json_response = json.dumps(data_set)
+            logger.error("Invalid Login Details.")
             return HttpResponseNotFound(json_response)
     else:
         data_set = dict(detail="Bad Request.")
         json_response = json.dumps(data_set)
+        logger.error("Bad Request.")
         return HttpResponseBadRequest(json_response)
 
 
